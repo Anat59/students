@@ -13,6 +13,6 @@ public interface StudentRepository extends MongoRepository<Student, Integer> {
 	
 	long countByNameInIgnoreCase(List<String> names);
 	
-	@Query("{'scores.?0': {'$gte': ?1}}")
+	@Query("{'scores.?0': {'$gte': ?1}}")//?0 = подставь нулевой,(?1) первый параметр
 	Stream<Student> findByExamAndScoreGreateEqualsThan(String exam, int score);
 }
